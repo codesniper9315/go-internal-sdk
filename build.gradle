@@ -1,2 +1,24 @@
 configurations.maybeCreate("default")
 artifacts.add("default", file('go-internal-sdk.aar'))
+
+apply plugin: 'maven-publish'
+
+// after applying the plugin, configure it
+publishing {
+    publications {
+        // create a publication
+        mavenJava(MavenPublication) {
+            // your publication configuration
+            groupId 'com.coinable'
+            artifactId 'go-internal-sdk'
+            version '1.0.0'
+
+            // if it's an Android library
+            from components.release
+
+            // If you're publishing a Java library, you'd typically do:
+            from components.java
+        }
+    }
+}
+
