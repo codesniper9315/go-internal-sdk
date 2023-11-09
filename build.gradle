@@ -1,2 +1,2 @@
 configurations.maybeCreate("default")
-artifacts.add("default", file('mpc-sdk.aar'))
+artifacts.add("default", file('go-internal-sdk.aar'))
